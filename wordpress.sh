@@ -11,7 +11,7 @@ sudo apt install -y mysql-server
 #tao database wordpress 
 echo "create database wordpress" | mysql -u root -p"Luonghuuquan1!"| true
 #tao wordpressuser 
-echo "CREATE USER 'wordpressuser'@'%' IDENTIFIED WITH mysql_native_password BY 'Luonghuuquan1!';" | mysql -u root  -p"Luonghuuquan1!"
+echo "CREATE USER 'wordpressuser'@'%' IDENTIFIED WITH mysql_native_password BY 'Luonghuuquan1!';" | mysql -u root  -p"Luonghuuquan1!"|true
 echo "GRANT ALL ON wordpress.* TO 'wordpressuser'@'%';" | mysql -u root -p"Luonghuuquan1!"
 echo "FLUSH PRIVILEGES;"|mysql -u root -p"Luonghuuquan1!"
 #cai dat php7 
