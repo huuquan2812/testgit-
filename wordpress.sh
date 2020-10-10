@@ -19,5 +19,16 @@ sudo  apt install -y php libapache2-mod-php
 sudo apt install -y  php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip
 sudo systemctl restart apache2 
 
- 
+#cau hinh wordpress 
+cp ./apache2/wordpress.conf /etc/apache2/sites-available/wordpress.conf
+sudo a2enmod rewrite
+sudo apache2ctl configtest
+sudo systemctl restart apache2
+#tai wordpress 
+curl -O https://wordpress.org/latest.tar.gz
+tar xzvf latest.tar.gz
+touch ./wordpress/.htaccess
+cp ./wordpress/wp-config-sample.php ./wordpress/wp-config.php
+mkdir ./wordpress/wp-content/upgrade
+sudo cp -a ./wordpress/. /var/www/wordpress
 
