@@ -31,4 +31,5 @@ touch ./wordpress/.htaccess
 cp ./wordpress/wp-config-sample.php ./wordpress/wp-config.php
 mkdir ./wordpress/wp-content/upgrade
 sudo cp -a ./wordpress/. /var/www/wordpress
-
+sudo chown -R www-data:www-data /var/www/wordpress
+sudo cp ./apache2/wp-config.php /var/www/wordpress/wp-config.php
