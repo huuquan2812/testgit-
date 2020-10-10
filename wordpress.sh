@@ -9,9 +9,15 @@ sudo systemctl status
  
 sudo apt install -y mysql-server
 #tao database wordpress 
-echo "create database quan_test_wordpress" | mysql -u root -p"Luonghuuquan1!"| true
+echo "create database wordpress" | mysql -u root -p"Luonghuuquan1!"| true
+#tao wordpressuser 
+echo "CREATE USER 'wordpressuser'@'%' IDENTIFIED WITH mysql_native_password BY 'Luonghuuquan1!';" | mysql -u root  -p"Luonghuuquan1!"
+echo "GRANT ALL ON wordpress.* TO 'wordpressuser'@'%';" | mysql -u root -p"Luonghuuquan1!"
+echo "FLUSH PRIVILEGES;"|mysql -u root -p"Luonghuuquan1!"
 #cai dat php7 
 sudo  apt install -y php libapache2-mod-php
 sudo apt install -y  php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip
+sudo systemctl restart apache2 
+
  
 
