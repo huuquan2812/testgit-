@@ -20,7 +20,7 @@ sudo apt install -y  php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap ph
 sudo systemctl restart apache2 
 
 #cau hinh wordpress 
-cp ./apache2/wordpress.conf /etc/apache2/sites-available/wordpress.conf
+sudo cp ./apache2/wordpress.conf /etc/apache2/sites-available/wordpress.conf
 sudo a2enmod rewrite
 sudo apache2ctl configtest
 sudo systemctl restart apache2
